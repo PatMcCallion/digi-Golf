@@ -42,7 +42,6 @@ python server.py
 <li>Flask</li>
 <li>HTML</li>
 <li>CSS</li>
-<li>Bootstrap</li>
 </ul>
 <h2>APIs Used</h2>
 <ul>
