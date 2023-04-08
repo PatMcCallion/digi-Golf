@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='../static/css/styles.css') }}">
+</head>
+
+<body onload="getLocation()">
+    <div class="mainContainer">
+        <div class="navBar">
+            <div class="logo">
+                <h1>digiGolf</h1>
+            </div>
+            <div class="navBtn">
+                <a href="/digiGolf/dashboard">Home</a>
+                <a href="/digiGolf/tracker">Round Tracker</a>
+                <a href="/digiGolf/history">Round History</a>
+                <a href="/digiGolf/locator">Course Locator</a>
+            </div>
+        </div>
+        <a href="/user/logout"><img src="{{ url_for('static', filename='../static/img/dg_main_icon.png') }}" alt=""></a>
+        <div class="subContainer">
+            <div class="subRow1">
+                <div class="welcome">
+                    <h3>Welcome {{ single_user.first_name }} {{ single_user.last_name }}</h3>
+                </div>
+                <table class="weatherBar">
+                    <caption>3 Day Golf Forecast</caption>
+                    <thead>
+                        <th>Date</th>
+                        <th>Temperature</th>
+                        <th>Expected Weather</th>
+                        <th>Wind Speed/Direction</th>
+                    </thead>
+                    <tr class="weatherDay1">
+                        <td class="date1"></td>
+                        <td class="temp1"></td>
+                        <td class="weather1"></td>
+                        <td class="windSpeed1"></td>
+                    </tr>
+                    <tr class="weatherDay2">
+                        <td class="date2"></td>
+                        <td class="temp2"></td>
+                        <td class="weather2"></td>
+                        <td class="windSpeed2"></td>
+                    </tr>
+                    <tr class="weatherDay3">
+                        <td class="date3"></td>
+                        <td class="temp3"></td>
+                        <td class="weather3"></td>
+                        <td class="windSpeed3"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="imageDiv">
+                <img src="../static/img/course_sunrise.jpg" alt="Sunrise on Golf Course">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='../static/js/scripts.js') }}"></script>
+</body>
+
+</html>

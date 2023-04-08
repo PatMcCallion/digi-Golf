@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='../static/css/styles.css') }}">
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div class="navBar">
+            <div class="logo">
+                <h1>digiGolf</h1>
+            </div>
+            <div class="navBtn">
+                <a href="/digiGolf/dashboard">Home</a>
+                <a href="/digiGolf/tracker">Round Tracker</a>
+                <a href="/digiGolf/history">Round History</a>
+                <a href="/digiGolf/locator">Course Locator</a>
+            </div>
+        </div>
+        <a href="/user/logout"><img src="{{ url_for('static', filename='../static/img/dg_main_icon.png') }}" alt=""></a>
+        <div class="roundConf">
+            <h3>Confirm The Course You Are Playing Today</h3>
+            <h3>Course Name: {{ confirm.course_name }}</h3>
+            <h3>Course City: {{ confirm.course_city }}</h3>
+            <h3>Course State: {{ confirm.course_state }}</h3>
+            <h3>You are playing: {{ confirm.holes_played }} holes</h3>
+            <h3><a href="/digiGolf/tracker/{{ confirm.id }}/1"> Yes, that is correct! </a></h3>
+            <h3> <a href="javascript:history.back()"> No, I need to fix
+                    something</a></h>
+        </div>
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+
+</html>

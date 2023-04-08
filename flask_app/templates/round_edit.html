@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='../static/css/styles.css') }}">
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div class="navBar">
+            <div class="logo">
+                <h1>digiGolf</h1>
+            </div>
+            <div class="navBtn">
+                <a href="/digiGolf/dashboard">Home</a>
+                <a href="/digiGolf/tracker">Round Tracker</a>
+                <a href="/digiGolf/history">Round History</a>
+                <a href="/digiGolf/locator">Course Locator</a>
+            </div>
+        </div>
+        <a href="/user/logout"><img src="{{ url_for('static', filename='../static/img/dg_main_icon.png') }}" alt=""></a>
+        <div class="formEdit">
+            <form action="/digiGolf/post_updates" method="post">
+                <caption>
+                    <h3>Edit Round played at:</h3>
+                    <h4>{{ single_round.course_name }} on
+                        {{single_round.created_at.strftime('%m-%d-%Y at
+                        %H:%M') }}</h4>
+                </caption>
+                <div class="headerRow">
+                    <div class="ht">
+                        <label for="course_name">Course Name:</label>
+                        <input type="text" name="course_name" placeholder="{{ single_round.course_name }}">
+                        <label for="holes_played">Holes Played:</label>
+                        <input type="text" name="holes_played" placeholder="{{ single_round.holes_played }}">
+                    </div>
+                    <div class="ht">
+                        <label for="course_state">Course State:</label>
+                        <input type="text" name="course_state" placeholder="{{ single_round.course_state }}">
+                        <label for="course_city">Course City:</label>
+                        <input type="text" name="course_city" placeholder="{{ single_round.course_city }}">
+                    </div>
+                </div>
+                <div class="topRow">
+                    <div class="h">
+                        <label for="hole_1">Hole 1 Strokes:</label>
+                        <input type="text" name="hole_1" placeholder="{{ single_round.hole_1 }}">
+                        <label for="par_1"> Hole 1 Par:</label>
+                        <input type="text" name="par_1" placeholder="{{ single_round.par_1 }}">
+                    </div>
+                    <div class="h">
+                        <label for="hole_2">Hole 2 Strokes:</label>
+                        <input type="text" name="hole_2" placeholder="{{ single_round.hole_2 }}">
+                        <label for="par_2">Hole 2 Par:</label>
+                        <input type="text" name="par_2" placeholder="{{ single_round.par_2 }}">
+                    </div>
+                    <div class="h">
+                        <label for="hole_3">Hole 3 Strokes:</label>
+                        <input type="text" name="hole_3" placeholder="{{ single_round.hole_3 }}">
+                        <label for="par_3">Hole 3 Par:</label>
+                        <input type="text" name="par_3" placeholder="{{ single_round.par_3 }}">
+                    </div>
+                    <div class="h">
+                        <label for="hole_4">Hole 4 Strokes:</label>
+                        <input type="text" name="hole_4" placeholder="{{ single_round.hole_4 }}">
+                        <label for="par_4">Hole 4 Par:</label>
+                        <input type="text" name="par_4" placeholder="{{ single_round.par_4 }}">
+                    </div>
+                    <div class="h">
+                        <label for="hole_5">Hole 5 Strokes:</label>
+                        <input type="text" name="hole_5" placeholder="{{ single_round.hole_5 }}">
+                        <label for="par_5">Hole 5 Par:</label>
+                        <input type="text" name="par_5" placeholder="{{ single_round.par_5 }}">
+                    </div>
+                    <div class="h">
+                        <label for="hole_6">Hole 6 Strokes:</label>
+                        <input type="text" name="hole_6" placeholder="{{ single_round.hole_6 }}">
+                        <label for="par_6">Hole 6 Par:</label>
+                        <input type="text" name="par_6" placeholder="{{ single_round.par_6 }}">
+                    </div>
+                    <div class="h">
+                        <label for="hole_7">Hole 7 Strokes:</label>
+                        <input type="text" name="hole_7" placeholder="{{ single_round.hole_7 }}">
+                        <label for="par_7">Hole 7 Par:</label>
+                        <input type="text" name="par_7" placeholder="{{ single_round.par_7 }}">
+                    </div>
+                    <div class="h">
+                        <label for="hole_8">Hole 8 Strokes:</label>
+                        <input type="text" name="hole_8" placeholder="{{ single_round.hole_8 }}">
+                        <label for="par_8">Hole 8 Par:</label>
+                        <input type="text" name="par_8" placeholder="{{ single_round.par_8 }}">
+                    </div>
+                    <div class="h">
+                        <label for="hole_9">Hole 9 Strokes:</label>
+                        <input type="text" name="hole_9" placeholder="{{ single_round.hole_9 }}">
+                        <label for="par_9">Hole 9 Par:</label>
+                        <input type="text" name="par_9" placeholder="{{ single_round.par_9 }}">
+                    </div>
+                </div>
+                <div class="bottomRow">
+                    <div class="h">
+                        <label for="hole_10">Hole 10 Strokes:</label>
+                        <input type="text" name="hole_10" placeholder="{{ single_round.hole_10 }}">
+                        <label for="par_10">Hole 10 Par:</label>
+                        <input type="text" name="par_10" placeholder="{{ single_round.par_10 }}">
+                    </div>
+                    <div class="h">
+                        <label for="hole_11">Hole 11 Strokes:</label>
+                        <input type="text" name="hole_11" placeholder="{{ single_round.hole_11 }}">
+                        <label for="par_11">Hole 11 Par:</label>
+                        <input type="text" name="par_11" placeholder="{{ single_round.par_11 }}">
+                    </div>
+                    <div class="h">
+                        <label for="hole_12">Hole 12 Strokes:</label>
+                        <input type="text" name="hole_12" placeholder="{{ single_round.hole_12 }}">
+                        <label for="par_12">Hole 12 Par:</label>
+                        <input type="text" name="par_12" placeholder="{{ single_round.par_12 }}">
+                    </div>
+                    <div class="h">
+                        <label for="hole_13">Hole 13 Strokes:</label>
+                        <input type="text" name="hole_13" placeholder="{{ single_round.hole_13 }}">
+                        <label for="par_13">Hole 13 Par:</label>
+                        <input type="text" name="par_13" placeholder="{{ single_round.par_13 }}">
+                    </div>
+                    <div class="h">
+                        <label for="hole_14">Hole 14 Strokes:</label>
+                        <input type="text" name="hole_14" placeholder="{{ single_round.hole_14 }}">
+                        <label for="par_14">Hole 14 Par:</label>
+                        <input type="text" name="par_14" placeholder="{{ single_round.par_14 }}">
+                    </div>
+                    <div class="h">
+                        <label for="hole_15">Hole 15 Strokes:</label>
+                        <input type="text" name="hole_15" placeholder="{{ single_round.hole_15 }}">
+                        <label for="par_15">Hole 15 Par:</label>
+                        <input type="text" name="par_15" placeholder="{{ single_round.par_15 }}">
+                    </div>
+                    <div class="h">
+                        <label for="hole_16">Hole 16 Strokes:</label>
+                        <input type="text" name="hole_16" placeholder="{{ single_round.hole_16 }}">
+                        <label for="par_16">Hole 16 Par:</label>
+                        <input type="text" name="par_16" placeholder="{{ single_round.par_16 }}">
+                    </div>
+                    <div class="h">
+                        <label for="hole_17">Hole 17 Strokes:</label>
+                        <input type="text" name="hole_17" placeholder="{{ single_round.hole_17 }}">
+                        <label for="par_17">Hole 17 Par:</label>
+                        <input type="text" name="par_17" placeholder="{{ single_round.par_17 }}">
+                    </div>
+                    <div class="h">
+                        <label for="hole_18">Hole 18 Strokes:</label>
+                        <input type="text" name="hole_18" placeholder="{{ single_round.hole_18 }}">
+                        <label for="par_18">Hole 18 Par:</label>
+                        <input type="text" name="par_18" placeholder="{{ single_round.par_18 }}">
+                    </div>
+                </div>
+                <button>Submit Edits</button>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='../static/js/scripts.js') }}"></script>
+</body>
+
+</html>

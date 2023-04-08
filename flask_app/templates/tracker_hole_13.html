@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='../static/css/styles.css') }}">
+</head>
+
+<body onload="randomQuote()">
+    <div class="mainContainer">
+        <div class="navBar">
+            <div class="logo">
+                <h1>digiGolf</h1>
+            </div>
+            <div class="navBtn">
+                <a href="/digiGolf/dashboard">Home</a>
+                <a href="/digiGolf/tracker">Round Tracker</a>
+                <a href="/digiGolf/history">Round History</a>
+                <a href="/digiGolf/locator">Course Locator</a>
+            </div>
+        </div>
+        <a href="/user/logout"><img src="{{ url_for('static', filename='../static/img/dg_main_icon.png') }}" alt=""></a>
+        <div class="rows">
+            <div class="tracker">
+                <h2>Hole #13</h2>
+                <form action="/digiGolf/tracker/{{ id }}/update_13" method="post">
+                    <h3>Par:</h3>
+                    <div class="par">
+                        <label for="par_13">3</label>
+                        <input type="radio" name="par_13" value="3">
+                        <label for="par_13">4</label>
+                        <input type="radio" name="par_13" value="4">
+                        <label for="par_13">5</label>
+                        <input type="radio" name="par_13" value="5">
+                    </div>
+                    <label for="hole_13">Strokes:</label>
+                    <input type="number" name="hole_13" id="">
+                    <button>Submit</button>
+                </form>
+            </div>
+            <div class="quotes"> </div>
+        </div>
+        <script type="text/javascript" src="{{ url_for('static', filename='../static/js/scripts.js') }}"></script>
+</body>
+
+</html>

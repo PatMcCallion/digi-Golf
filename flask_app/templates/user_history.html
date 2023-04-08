@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='../static/css/styles.css') }}">
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div class="navBar">
+            <div class="logo">
+                <h1>digiGolf</h1>
+            </div>
+            <div class="navBtn">
+                <a href="/digiGolf/dashboard">Home</a>
+                <a href="/digiGolf/tracker">Round Tracker</a>
+                <a href="/digiGolf/history">Round History</a>
+                <a href="/digiGolf/locator">Course Locator</a>
+            </div>
+        </div>
+        <a href="/user/logout"><img src="{{ url_for('static', filename='../static/img/dg_main_icon.png') }}" alt=""></a>
+        <div class="subContainer">
+            <div>
+                <table class="roundHist">
+                    <caption>{{ single_user.first_name }} {{ single_user.last_name }}'s Golf Round History</caption>
+                    <thead>
+                        <th>Date</th>
+                        <th>Course</th>
+                        <th>Par</th>
+                        <th>Score</th>
+                        <th>Notes/Edit</th>
+                    </thead>
+                    <tbody>
+                        {% for tracker in history.single_user %}
+                        {% if tracker.total_strokes != 0 and tracker.total_strokes != undefined %}
+                        <tr>
+                            <td>{{ tracker.created_at.strftime('%m-%d-%Y at %H:%M') }}</td>
+                            <td>{{ tracker.course_name }}</td>
+                            <td>{{ tracker.course_par }}</td>
+                            <td>{{ tracker.total_strokes }}</td>
+                            <td><a href="/digiGolf/edit/{{ tracker.id }}"><img src="../static/img/edit.png" alt=""></a>
+                            </td>
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+
+</html>

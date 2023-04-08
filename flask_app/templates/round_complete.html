@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='../static/css/styles.css') }}">
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div class="navBar">
+            <div class="logo">
+                <h1>digiGolf</h1>
+            </div>
+            <div class="navBtn">
+                <a href="/digiGolf/dashboard">Home</a>
+                <a href="/digiGolf/tracker">Round Tracker</a>
+                <a href="/digiGolf/history">Round History</a>
+                <a href="/digiGolf/locator">Course Locator</a>
+
+
+            </div>
+        </div>
+        <a href="/user/logout"><img src="{{ url_for('static', filename='../static/img/dg_main_icon.png') }}" alt=""></a>
+        <div class="roundComp">
+            <h2>Round at {{ score.course_name }} Complete!</h2>
+            <h3>The Course Par was: {{ score.course_par }}</h3>
+            <h3>Your Score was: {{ score.total_strokes }} </h3>
+            <h4>Time started: {{ score.created_at.strftime('%m-%d-%Y at %H:%M') }}</h4>
+            <h4>Time finished: {{ score.updated_at.strftime('%m-%d-%Y at %H:%M') }}</h4>
+            <h4>You finshed: {% if (score.course_par) - (score.total_strokes) > 0 %}
+                {{ (score.course_par) - (score.total_strokes)}} under par! Excellent round!
+                {% elif ((score.course_par) - (score.total_strokes)) < 0 %} {{ (score.course_par) -
+                    (score.total_strokes) }} over par! {% else %} Par for the course! {% endif %}</h4>
+        </div>
+</body>
+
+</html>
