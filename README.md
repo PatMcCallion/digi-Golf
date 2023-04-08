@@ -21,6 +21,9 @@ pip install -r requirements.txt
 </pre>
 <li>Run the server:</li>
 <pre>
+pip env shell
+</pre>
+<pre>
 python server.py
 </pre>
 <p>The application should now be running at <a href="http://localhost:5000/">http://localhost:5000/</a></p>
