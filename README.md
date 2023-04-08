@@ -21,7 +21,7 @@ pip install -r requirements.txt
 </pre>
 <li>Run the server:</li>
 <pre>
-pip env shell
+pipenv shell
 </pre>
 <pre>
 python server.py
