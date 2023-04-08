@@ -49,6 +49,6 @@ python server.py
 <li>Golf Courses API (https://golf-courses-api.herokuapp.com)</li>
 </ul>
 <h2>Authors</h2>
-<p>Your Name - <a href="https://www.yourwebsite.com/">Your Website</a></p>
+<p>Patrick McCallion - <a href="https://www.patrickmccallion.com/">My Portfolio</a></p>
 <h2>License</h2>
 <p>This project is licensed under the <strong>MIT</strong> license.</p>
